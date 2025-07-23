@@ -2,9 +2,9 @@ import { z } from "zod";
 
 const userSchema = z.object({
     username: z.string().min(3, "Username is required"),
-    email: z.email("Invalid email"), 
+    email: z.string().email("Invalid email"), 
     password: z.string().min(6, "Password must be at least 6 characteres long"),
-    avatar: z.url("invalid URL").optional(),
+    avatar: z.string().url("invalid URL").optional(),
 })
 
 const userIdSchema = z.object({
