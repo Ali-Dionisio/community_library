@@ -13,9 +13,8 @@ router.post(
 );
 router.get("/users", userController.findAllUsersController);
 router.get("/users/:id", validateUserId, userController.findUserByIdController);
-router.put(
+router.patch(
     "/users/:id", 
-    validate(userSchema),
     validateUserId,
     userController.updateUserController);
 router.delete("/users/:id", validateUserId, userController.deleteUserController);
