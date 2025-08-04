@@ -30,7 +30,7 @@ function findAllLoansRepository() {
     db.all(
       `SELECT loans.id, loans.dueDate, users.email, books.title
         FROM loans
-       JOIN USERS on loans.id = users.id
+       JOIN USERS on loans.userId = users.id
        JOIN BOOKS on loans.bookId = books.id
       `,
       [],

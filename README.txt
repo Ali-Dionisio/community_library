@@ -1,4 +1,0 @@
-Repositorio
-Serviços
-controlador
-rotas

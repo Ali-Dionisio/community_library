@@ -8,16 +8,16 @@ import { loanSchema } from "../schema/loan.schema.js";
 
 const router = Router();
 
-router.post("/loans", 
+router.post("/", 
             validate(loanSchema), 
             loanController.createLoanController);
-router.get("/loans", loanController.findAllLoansController);
+router.get("/", loanController.findAllLoansController);
 
 
-router.get("/loans/:id", 
+router.get("/:id", 
             validateLoanId, 
             loanController.findLoanByIdController);
-router.delete("/loans/:id", 
+router.delete("/:id", 
             validateLoanId, 
             loanController.deleteLoanController);
 
