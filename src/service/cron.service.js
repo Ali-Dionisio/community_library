@@ -4,7 +4,7 @@ import sendEmail from "./email.service.js";
 import loanRepositories from "../repositories/loan.repositories.js";
 
 //  minuto - hora - dia - mes - dia da semana
-cron.schedule("13 * * * *", async () => {
+cron.schedule("53 * * * *", async () => {
     console.log("Running daily job to check for due date...");
     const loans = await loanRepositories.findAllLoansRepository();
     const today = moment().startOf("day")

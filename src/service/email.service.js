@@ -6,8 +6,16 @@ const transporter = nodemailer.createTransport({
         user: process.env.EMAIL,
         pass: process.env.PASS,
     },
+    tls: {
+        rejectUnauthorized: false // <- Isso resolve o erro do certificado
+    }
 })
-function sendEmail(email, bookTitle, dueDate){
+    function sendEmail(email, bookTitle, dueDate){
+        // if (!email) {
+        //     console.error("❌ Nenhum destinatário definido para envio de e-mail.");
+        //     return;
+        // }
+
     const mailOptions = {
         from: process.env.EMAIL,
         to: email,
